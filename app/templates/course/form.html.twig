@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+{% block body %}
+    <h1>{{title}}</h1>
+    <p>{{ message }}</p>
+    {{form(form)}}
+    <a href="{{ path('course_list') }}" class="btn btn-primary" style="margin: -95px 0 0 100px">Listar cursos cadastrados</a>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+{% block body %}
+    <h1>{{title}}</h1>
+    <a href="{{ path('course_create') }}" class="btn btn-primary">+ Adicionar</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>#</td>
+            <td>Nome Curso</td>
+            <td>Descrição</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for  course in  courses%}
+            <tr>
+                <td>{{ course.id }}</td>
+                <td>{{ course.name }}</td>
+                <td>{{ course.description }}</td>
+                <td>
+                    <a href="{{ path('course_update', {id: course.id}) }}" class="btn btn-primary">Editar</a>
+                    <a href="{{ path('course_delete', {id: course.id}) }}" class="btn btn-primary">Excluir</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

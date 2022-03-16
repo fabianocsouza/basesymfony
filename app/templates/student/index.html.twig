@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+{% block body %}
+    <h1>{{title}}</h1>
+    <a href="{{ path('student_create') }}" class="btn btn-primary">+ Adicionar</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>#</td>
+            <td>Nome</td>
+            <td>CPF</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for  student in  students%}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.cpf }}</td>
+                <td>
+                    <a href="{{ path('student_update', {id: student.id}) }}" class="btn btn-primary">Editar</a>
+                    <a href="{{ path('student_delete', {id: student.id}) }}" class="btn btn-primary">Excluir</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
