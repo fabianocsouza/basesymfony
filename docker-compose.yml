@@ -38,7 +38,7 @@ services:
       - .docker/nginx/sites:/etc/nginx/sites-available
       - .docker/nginx/conf.d/:/etc/nginx/conf.d
     ports:
-      - '80:80'
+      - '8084:80'
     networks:
       - base_net
     depends_on:

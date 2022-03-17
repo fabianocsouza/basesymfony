@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+{% block body %}
+    <h1>{{title}}</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>#</td>
+            <td>Inicio do curso</td>
+            <td>Aluno</td>
+            <td>Curso</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for  registration in  registrations %}
+            <tr>
+                <td>{{ registration.id }}</td>
+
+                <td>{{ registration.student.name }}</td>
+                <td>{{ registration.course.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
