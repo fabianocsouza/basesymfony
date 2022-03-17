@@ -13,4 +13,4 @@
 (dentro do container)
 #composer install
 
-acesse: localhost:80# basesymfony
+acesse: localhost:8084# basesymfony
