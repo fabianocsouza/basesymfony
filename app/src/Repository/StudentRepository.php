@@ -35,4 +35,6 @@ class StudentRepository extends ServiceEntityRepository
         $entityManager->remove($student);
         $entityManager->flush();
     }
+
+
 }

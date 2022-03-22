@@ -40,9 +40,7 @@ class StudentController extends AbstractController
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-
-
+        if (($form->isSubmitted() && $form->isValid())) {
 
             $this->studentRepository->persist($student);
             $message = 'Cadastro realizado com sucesso!';
@@ -55,6 +53,7 @@ class StudentController extends AbstractController
         return $this->renderForm('student/form.html.twig', $data);
 
     }
+
 
 
     #[Route('/update/{id}', name: 'update', methods: ['GET', 'POST'])]
@@ -83,6 +82,7 @@ class StudentController extends AbstractController
         $this->studentRepository->delete($student);
         return $this->redirectToRoute('student_list');
     }
+
 
 
 }

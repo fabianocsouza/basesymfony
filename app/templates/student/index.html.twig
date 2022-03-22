@@ -21,7 +21,7 @@
                 <td>{{ student.cpf }}</td>
                 <td>
                     <a href="{{ path('student_update', {id: student.id}) }}" class="btn btn-primary">Editar</a>
-                    <a href="{{ path('student_delete', {id: student.id}) }}" class="btn btn-primary">Excluir</a>
+                    <a href="{{ path('student_delete', {id: student.id}) }}" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
         {% endfor %}

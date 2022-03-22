@@ -72,7 +72,7 @@ class Student
     /**
      * @return Collection|Registration[]
      */
-    public function getRegistrations(): Collection
+    public function getRegistrations(): ?Collection
     {
         return $this->registrations;
     }

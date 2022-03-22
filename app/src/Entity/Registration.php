@@ -32,7 +32,6 @@ class Registration
 
     /**
      * @ORM\ManyToOne(targetEntity=Student::class, inversedBy="registrations")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $student;
 
@@ -59,7 +58,7 @@ class Registration
         return $this;
     }
 
-    public function getStudent(): Student
+    public function getStudent(): ?Student
     {
         return $this->student;
     }

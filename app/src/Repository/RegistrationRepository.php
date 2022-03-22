@@ -19,32 +19,13 @@ class RegistrationRepository extends ServiceEntityRepository
         parent::__construct($registry, Registration::class);
     }
 
-    // /**
-    //  * @return Registration[] Returns an array of Registration objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function persist(Registration $instance)
     {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('r.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $em = $this->getEntityManager();
+        $em->beginTransaction();
+        $em->persist($instance);
+        $em->commit();
+        $em->flush();
 
-    /*
-    public function findOneBySomeField($value): ?Registration
-    {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
     }
-    */
 }

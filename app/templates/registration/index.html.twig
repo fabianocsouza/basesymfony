@@ -4,23 +4,33 @@
 {% endblock %}
 {% block body %}
     <h1>{{title}}</h1>
+    <a href="{{ path('registration_create') }}" class="btn btn-primary">+ Adicionar</a>
     <table class="table">
         <thead>
         <tr>
             <td>#</td>
-            <td>Inicio do curso</td>
             <td>Aluno</td>
             <td>Curso</td>
         </tr>
         </thead>
         <tbody>
-        {% for  registration in  registrations %}
-            <tr>
-                <td>{{ registration.id }}</td>
 
-                <td>{{ registration.student.name }}</td>
-                <td>{{ registration.course.name }}</td>
+        {% for  student in  students %}
+            {% if(student.registrations is not empty) %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>
+                    {% for registration in student.registrations %}
+                        {{ registration.course.name }},
+                    {% endfor %}
+                </td>
+                <td>
+                    <a href="#" class="btn btn-primary">Editar</a>
+                    <a href="#" class="btn btn-danger">Excluir</a>
+                </td>
             </tr>
+            {%endif%}
         {% endfor %}
         </tbody>
     </table>

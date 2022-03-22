@@ -21,7 +21,7 @@
                 <td>{{ course.description }}</td>
                 <td>
                     <a href="{{ path('course_update', {id: course.id}) }}" class="btn btn-primary">Editar</a>
-                    <a href="{{ path('course_delete', {id: course.id}) }}" class="btn btn-primary">Excluir</a>
+                    <a href="{{ path('course_delete', {id: course.id}) }}" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
         {% endfor %}
